@@ -83,7 +83,7 @@ python3 -m http.server 8000
 1. Push this folder to a repo named `<your-org-or-user>.github.io` (for a user/org
    site) or any repo name (for a project site).
 2. In the repo, go to 0 **Settings → Pages**, set **Source** to "Deploy from a branch",
-   branch `main`, folder `/ (root)`.
+  branch `main`, folder `/ (root)`.
 3. Your site will be live at `https://<user-or-org>.github.io/` (or
    `https://<user>.github.io/<repo>/` for a project site — in that case update any
    absolute paths if you add them later; this template only uses relative paths, so it
