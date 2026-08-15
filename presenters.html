@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" data-theme-setting="system">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Presenters — IDs That Mean Something (CIKM '26)</title>
+  <meta name="description" content="The seven presenters behind IDs That Mean Something: A Hands-On Tutorial on Semantic IDs for Recommender Systems, from Huawei Ireland Research Center and University College Dublin.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      var saved = localStorage.getItem("theme-setting") || "system";
+      document.documentElement.setAttribute("data-theme-setting", saved);
+      if (saved !== "system") document.documentElement.setAttribute("data-theme", saved);
+    })();
+  </script>
+  <style>
+    .bio-card {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      border: 1px solid var(--divider-color);
+      border-radius: 10px;
+      padding: 1.3rem 1.5rem;
+      margin-bottom: 1.1rem;
+      background: var(--card-bg-color);
+    }
+    .bio-card .person-photo { width: 108px; height: 108px; min-width: 108px; }
+    .bio-card .person-name { font-size: 1.1rem; }
+    .bio-card .bio-text { color: var(--text-color-light); font-size: 0.92rem; margin: 0.5rem 0 0; }
+    .bio-card .bio-links { margin-top: 0.5rem; font-size: 0.85rem; }
+    @media (max-width: 560px) {
+      .bio-card { flex-direction: column; align-items: center; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-brand" href="index.html">SemID @ CIKM 2026</a>
+      <button class="navbar-toggle" onclick="toggleNav()" aria-label="Toggle navigation">☰</button>
+      <div class="navbar-links" id="navbar-links">
+        <a href="index.html">About</a>
+        <a href="tutorial.html">Tutorial</a>
+        <a href="papers.html">Papers</a>
+        <a href="presenters.html" class="active">Presenters</a>
+        <a href="editions.html">Editions</a>
+        <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Change theme">◐</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page-main">
+    <div class="container">
+
+      <h1 class="page-title">Presenters</h1>
+      <p class="lede">Profiles and affiliations of the seven researchers behind this tutorial, from Huawei Ireland Research Center and University College Dublin.</p>
+
+      <hr>
+
+      <div class="bio-card">
+        <img class="person-photo" src="assets/img/profiles/presenter-1.jpg" alt="Roger Zhe Li">
+        <div>
+          <p class="person-name">Roger Zhe Li</p>
+          <p class="person-affiliation">Huawei Ireland Research Center, Dublin, Ireland</p>
+          <p class="bio-text">
+            Senior Research Scientist at the Huawei Ireland Research Center, leading ads recommendation R&amp;D
+            covering multi-modal semantic IDs and CVR prediction, with the system serving over 250 million users
+            globally. He holds a PhD from TU Delft, with publications at SIGIR, WSDM, RecSys, and ICTIR. He was
+            recognized as an outstanding PC member at RecSys '25, and served as an invited industry speaker on
+            multi-modal semantic IDs at ECIR '26.
+          </p>
+          <p class="bio-links">
+            <a href="https://www.zhe-li.me/" target="_blank" rel="noopener">Homepage</a> ·
+            <a href="mailto:roger.zhe.li@huawei.com">Email</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="bio-card">
+        <img class="person-photo" src="assets/img/profiles/presenter-2.jpg" alt="Aghiles Salah">
+        <div>
+          <p class="person-name">Aghiles Salah</p>
+          <p class="person-affiliation">Huawei Ireland Research Center, Dublin, Ireland</p>
+          <p class="bio-text">
+            Principal Research Scientist at the Huawei Ireland Research Center. His research spans machine learning
+            and recommender systems, with publications in tier-1 conferences and journals. He co-delivered
+            hands-on tutorials on multimodal recommender systems at RecSys '21 and WebConf '23, and is the pioneer
+            and one of the main contributors of the Cornac recommendation framework. Over more than a decade,
+            Aghiles taught undergraduate and master's courses on machine learning and recommender systems at the
+            University of Paris, France.
+          </p>
+          <p class="bio-links">
+            <a href="http://saghiles.github.io/" target="_blank" rel="noopener">Homepage</a> ·
+            <a href="mailto:aghiles.salah@h-partners.com">Email</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="bio-card">
+        <img class="person-photo" src="assets/img/profiles/presenter-3.png" alt="Mete Sertkan">
+        <div>
+          <p class="person-name">Mete Sertkan</p>
+          <p class="person-affiliation">Huawei Ireland Research Center, Dublin, Ireland</p>
+          <p class="bio-text">
+            Senior Research Scientist at the Huawei Ireland Research Center working on ads recommendation. His
+            research interests span recommender systems, user modeling, information retrieval, and evaluation,
+            with publications in top-tier venues including ACL, CIKM, UMAP, RecSys, and SIGIR. He holds a PhD from
+            TU Wien, where he taught master's courses on recommender systems, social network analysis, and
+            innovation.
+          </p>
+          <p class="bio-links">
+            <a href="https://metesertkan.github.io/" target="_blank" rel="noopener">Homepage</a> ·
+            <a href="mailto:mete.sertkan@h-partners.com">Email</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="bio-card">
+        <img class="person-photo" src="assets/img/profiles/presenter-4.png" alt="Changhong Jin">
+        <div>
+          <p class="person-name">Changhong Jin</p>
+          <p class="person-affiliation">University College Dublin, Dublin, Ireland</p>
+          <p class="bio-text">
+            Assistant Professor of Computer Science at University College Dublin. His recent work covers
+            recommender-system auditing, ad recommendation under limited availability of personalized features,
+            and generative recommendation with semantic IDs. He has contributed to publications at CIKM, The Web
+            Conference, and ACL, and delivered a one-hour tutorial on recommender-system auditing at the
+            ECML-PKDD 2025 AIDEM workshop.
+          </p>
+          <p class="bio-links">
+            <a href="mailto:changhong.jin@ucd.ie">Email</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="bio-card">
+        <img class="person-photo" src="assets/img/profiles/presenter-5.jpeg" alt="Yingjie Niu">
+        <div>
+          <p class="person-name">Yingjie Niu</p>
+          <p class="person-affiliation">Huawei Ireland Research Center, Dublin, Ireland</p>
+          <p class="bio-text">
+            Research Scientist at the Huawei Ireland Research Center, working on ads recommendation and
+            multi-modal semantic IDs. His research interests span recommender systems and large language models,
+            with publications in tier-1 venues including ACL and WWW. He holds a PhD from University College
+            Dublin, where he taught master's courses on machine learning and information systems.
+          </p>
+          <p class="bio-links">
+            <a href="mailto:yingjie.niu1@h-partners.com">Email</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="bio-card">
+        <img class="person-photo" src="assets/img/profiles/presenter-6.jpg" alt="Ruihai Dong">
+        <div>
+          <p class="person-name">Ruihai Dong</p>
+          <p class="person-affiliation">University College Dublin, Dublin, Ireland</p>
+          <p class="bio-text">
+            Associate Professor of Computer Science at University College Dublin. His research focuses on Machine
+            Learning and Deep Learning with applications in recommender systems and finance. He has published
+            widely in top venues (e.g., WWW, RecSys, ACL, IJCAI) and served on their program committees. He
+            co-authored the RecSys '23 Best Student Paper and has co-organized the EARL Workshop series on
+            Evaluating and Applying Recommender Systems with Large Language Models, colocated with RecSys since
+            2024.
+          </p>
+          <p class="bio-links">
+            <a href="https://people.ucd.ie/ruihai.dong/" target="_blank" rel="noopener">Homepage</a> ·
+            <a href="mailto:ruihai.dong@ucd.ie">Email</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="bio-card">
+        <img class="person-photo" src="assets/img/profiles/presenter-7.png" alt="Barry Smyth">
+        <div>
+          <p class="person-name">Barry Smyth</p>
+          <p class="person-affiliation">University College Dublin, Dublin, Ireland</p>
+          <p class="bio-text">
+            Full Professor of Computer Science at University College Dublin and a founding figure of recommender
+            systems, with over three decades of work on user modeling, case-based reasoning, and personalization,
+            amassing over 28,000 citations and an h-index of 85.
+          </p>
+          <p class="bio-links">
+            <a href="https://people.ucd.ie/barry.smyth" target="_blank" rel="noopener">Homepage</a> ·
+            <a href="mailto:barry.smyth@ucd.ie">Email</a>
+          </p>
+        </div>
+      </div>
+
+      <hr>
+
+
+      <p><em>Maintained by <a href="https://www.zhe-li.me/" target="_blank" rel="noopener">Roger Zhe Li</a> — Last updated: <span id="last-updated">2026</span></em></p>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      IDs That Mean Something · CIKM '26, Rome, Italy · <a href="editions.html">Editions</a> · <a href="#">Code &amp; notebooks (upon acceptance)</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+  <script>initTheme();</script>
+</body>
+</html>

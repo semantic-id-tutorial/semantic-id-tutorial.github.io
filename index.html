@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme-setting="system">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>IDs That Mean Something — CIKM '26 Tutorial</title>
+  <meta name="description" content="A hands-on CIKM '26 tutorial on semantic IDs for recommender systems: from raw IDs to semantic IDs, across generative and discriminative applications.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      var saved = localStorage.getItem("theme-setting") || "system";
+      document.documentElement.setAttribute("data-theme-setting", saved);
+      if (saved !== "system") document.documentElement.setAttribute("data-theme", saved);
+    })();
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-brand" href="index.html">SemID @ CIKM 2026</a>
+      <button class="navbar-toggle" onclick="toggleNav()" aria-label="Toggle navigation">☰</button>
+      <div class="navbar-links" id="navbar-links">
+        <a href="index.html" class="active">About</a>
+        <a href="tutorial.html">Tutorial</a>
+        <a href="papers.html">Papers</a>
+        <a href="presenters.html">Presenters</a>
+        <a href="editions.html">Editions</a>
+        <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Change theme">◐</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page-main">
+    <div class="container">
+
+      <h1 class="page-title">IDs That Mean Something</h1>
+      <p class="lede">A hands-on CIKM '26 tutorial on semantic IDs for recommender systems — from raw integer IDs to semantic IDs, across generative and discriminative applications.</p>
+
+      <hr>
+
+      <h2 id="overview">Overview</h2>
+      <p>
+        Traditional recommender systems rely on arbitrary integer IDs to identify items — identifiers that carry
+        no semantic information and force models to learn representations purely from interaction data. Semantic
+        IDs address this by encoding semantic information directly into the item identity itself: items become
+        discrete token sequences that reflect content, hierarchy, and relationships, rather than opaque lookup keys.
+      </p>
+      <p>
+        This tutorial traces the evolution from raw IDs to semantic IDs as a scalable means of information
+        utilization in recommender systems, offering a comprehensive review of their development and applications
+        across multimodality, cold-start, and cross-domain recommendation. Hands-on exercises guide attendees
+        through building and evaluating semantic IDs, training models, and exploring cross-domain transfer, before
+        closing with open challenges such as dynamic semantic IDs and multi-stakeholder utility.
+      </p>
+
+      <hr>
+
+      <p><strong>This tutorial</strong> covers:</p>
+      <ul>
+        <li>The evolution from raw IDs → auxiliary content → semantic IDs, and why each stage falls short.</li>
+        <li>Semantic IDs in both generative (e.g., TIGER) and discriminative (e.g., YouTube ranking) recommendation.</li>
+        <li>Multimodality, collaborative signals, and cross-domain transfer via semantic IDs.</li>
+        <li>Hands-on construction and evaluation of semantic IDs on the Amazon Reviews dataset.</li>
+      </ul>
+
+      <p>This site curates:</p>
+      <ul>
+        <li><strong>Tutorial materials</strong> — session outline, learning goals, and hands-on notebooks.</li>
+        <li><strong>Papers</strong> — curated bibliography spanning raw IDs to semantic IDs.</li>
+        <li><strong>Presenters</strong> — the seven researchers behind the tutorial.</li>
+      </ul>
+
+      <hr>
+
+      <h2 id="explore">Explore</h2>
+      <div class="card-grid">
+        <a class="card" href="tutorial.html">
+          <h4 class="card-title">Tutorial</h4>
+          <p class="card-text">Learning goals, session outline, and hands-on materials.</p>
+        </a>
+        <a class="card" href="papers.html">
+          <h4 class="card-title">Papers</h4>
+          <p class="card-text">Curated collection of key papers, with search/filter.</p>
+        </a>
+        <a class="card" href="presenters.html">
+          <h4 class="card-title">Presenters</h4>
+          <p class="card-text">Profiles and affiliations of the presenters.</p>
+        </a>
+        <a class="card" href="editions.html">
+          <h4 class="card-title">Editions</h4>
+          <p class="card-text">Past and upcoming editions of this tutorial.</p>
+        </a>
+      </div>
+
+      <hr>
+
+      <h2 id="presenters">Presenters</h2>
+      <div class="people-grid">
+        <a class="person-card" href="https://www.zhe-li.me/" target="_blank" rel="noopener">
+          <img class="person-photo" src="assets/img/profiles/presenter-1.jpg" alt="Roger Zhe Li">
+          <div>
+            <p class="person-name">Roger Zhe Li</p>
+            <p class="person-affiliation">Huawei Ireland Research Center</p>
+          </div>
+        </a>
+        <a class="person-card" href="http://saghiles.github.io/" target="_blank" rel="noopener">
+          <img class="person-photo" src="assets/img/profiles/presenter-2.jpg" alt="Aghiles Salah">
+          <div>
+            <p class="person-name">Aghiles Salah</p>
+            <p class="person-affiliation">Huawei Ireland Research Center</p>
+          </div>
+        </a>
+        <a class="person-card" href="https://metesertkan.github.io/" target="_blank" rel="noopener">
+          <img class="person-photo" src="assets/img/profiles/presenter-3.png" alt="Mete Sertkan">
+          <div>
+            <p class="person-name">Mete Sertkan</p>
+            <p class="person-affiliation">Huawei Ireland Research Center</p>
+          </div>
+        </a>
+        <a class="person-card" href="presenters.html">
+          <img class="person-photo" src="assets/img/profiles/presenter-4.svg" alt="Changhong Jin">
+          <div>
+            <p class="person-name">Changhong Jin</p>
+            <p class="person-affiliation">University College Dublin</p>
+          </div>
+        </a>
+      </div>
+      <p><a href="presenters.html">See all 7 presenters →</a></p>
+
+      <hr>
+
+      <p><em>Maintained by <a href="https://www.zhe-li.me/" target="_blank" rel="noopener">Roger Zhe Li</a> — Last updated: <span id="last-updated">2026</span></em></p>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      IDs That Mean Something · CIKM '26, Rome, Italy · <a href="editions.html">Editions</a> · <a href="#">Code &amp; notebooks (upon acceptance)</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+  <script>initTheme();</script>
+</body>
+</html>

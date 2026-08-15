@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" data-theme-setting="system">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Tutorial — IDs That Mean Something (CIKM '26)</title>
+  <meta name="description" content="Tutorial materials: learning goals, audience, schedule, and presenters for IDs That Mean Something: A Hands-On Tutorial on Semantic IDs for Recommender Systems.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      var saved = localStorage.getItem("theme-setting") || "system";
+      document.documentElement.setAttribute("data-theme-setting", saved);
+      if (saved !== "system") document.documentElement.setAttribute("data-theme", saved);
+    })();
+  </script>
+  <style>
+    .schedule-scroll { overflow-x: auto; margin: 1rem 0; }
+    .schedule-table { min-width: 640px; margin: 0; }
+    .schedule-table .col-time { white-space: nowrap; color: var(--text-color-light); font-size: 0.88rem; }
+    .schedule-table .col-presenter { color: var(--text-color-light); }
+    .schedule-table tr.is-break td { color: var(--text-color-light); font-style: italic; }
+    .tba-note { color: var(--text-color-light); font-size: 0.85rem; }
+    .bibtex-block {
+      position: relative;
+      background: var(--card-bg-color);
+      border: 1px solid var(--divider-color);
+      border-radius: 10px;
+      padding: 1.1rem 1.3rem;
+      margin: 1rem 0;
+      overflow-x: auto;
+    }
+    .bibtex-block pre { margin: 0; }
+    .bibtex-block code {
+      background: none;
+      padding: 0;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      white-space: pre;
+      font-family: "SFMono-Regular", Consolas, Menlo, monospace;
+    }
+    .bibtex-copy {
+      position: absolute;
+      top: 0.7rem;
+      right: 0.7rem;
+      background: var(--bg-color);
+      border: 1px solid var(--divider-color);
+      color: var(--text-color-light);
+      border-radius: 6px;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+    .bibtex-copy:hover { border-color: var(--theme-color); color: var(--theme-color); }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-brand" href="index.html">SemID @ CIKM 2026</a>
+      <button class="navbar-toggle" onclick="toggleNav()" aria-label="Toggle navigation">☰</button>
+      <div class="navbar-links" id="navbar-links">
+        <a href="index.html">About</a>
+        <a href="tutorial.html" class="active">Tutorial</a>
+        <a href="papers.html">Papers</a>
+        <a href="presenters.html">Presenters</a>
+        <a href="editions.html">Editions</a>
+        <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Change theme">◐</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page-main">
+    <div class="container">
+
+      <div class="edition-banner">📌 <strong>CIKM '26 edition.</strong> This is the current edition of the tutorial, taking place in Rome, Italy. See all <a href="editions.html">editions</a>.</div>
+
+      <h1 class="page-title">IDs That Mean Something: A Hands-On Tutorial on Semantic IDs for Recommender Systems</h1>
+
+      <div class="page-citation">
+        Roger Zhe Li, Aghiles Salah, Mete Sertkan, Changhong Jin, Yingjie Niu, Ruihai Dong, and Barry Smyth. 2026.
+        IDs That Mean Something: A Hands-On Tutorial on Semantic IDs for Recommender Systems. In Proceedings of the
+        35th ACM International Conference on Information and Knowledge Management (CIKM '26), November 7–11, 2026,
+        Rome, Italy. ACM, New York, NY, USA, 5 pages. https://doi.org/10.1145/3799682.3839274
+        <a href="https://doi.org/10.1145/3799682.3839274" target="_blank" rel="noopener">[[paper]]</a>
+      </div>
+
+      <hr>
+
+      <h2 id="overview">Overview</h2>
+      <p>
+        Recommender systems have undergone a significant transformation in how they represent and identify items,
+        evolving from raw IDs as simple lookup keys to semantic IDs as structured interfaces for utilizing and
+        sharing information across recommendation settings. This tutorial reviews that evolution — raw IDs,
+        auxiliary content, and semantic IDs — and their applications across multimodality, cold-start, and
+        cross-domain recommendation, complemented by two hands-on sessions.
+      </p>
+
+      <hr>
+
+      <h2 id="goals">Learning Goals</h2>
+      <p>By the end of this tutorial, attendees will:</p>
+      <ol>
+        <li>Have the conceptual grounding and practical tools to apply semantic IDs in their own research or production systems.</li>
+        <li>Be able to identify scenarios where semantic IDs have the most impact, including cold-start and cross-domain recommendation.</li>
+        <li>Understand open challenges and emerging directions beyond conventional recommendation, such as dynamic semantic IDs, multi-stakeholder utility, and semantic planning.</li>
+      </ol>
+
+      <hr>
+
+      <h2 id="audience">Target Audience</h2>
+      <p>
+        This tutorial targets researchers and practitioners with a general interest in recommender systems,
+        information retrieval, and representation learning — particularly those working on knowledge representation
+        and scalable machine learning.
+      </p>
+      <p><strong>Prerequisites:</strong></p>
+      <ul>
+        <li>Basic familiarity with machine learning concepts and recommender systems fundamentals.</li>
+        <li>No prior knowledge of semantic IDs or generative retrieval is required.</li>
+      </ul>
+
+      <hr>
+
+      <h2 id="outline">Tutorial Outline and Structure</h2>
+      <p>
+        The half-day tutorial consists of <strong>3 hours of core content</strong>, plus two coffee breaks.
+        <em>All start times are tentative and will be finalized once CIKM&nbsp;'26 releases the official program.</em>
+      </p>
+
+      <div class="schedule-scroll">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th class="col-time">Time (tentative)</th>
+              <th class="col-section">Section</th>
+              <th class="col-presenter">Presenter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-time">9:00–9:15</td>
+              <td class="col-section">Introduction to recommender systems, raw item IDs, and auxiliary content</td>
+              <td class="col-presenter"></td>
+            </tr>
+            <tr>
+              <td class="col-time">9:15–9:30</td>
+              <td class="col-section">Semantic IDs: introduction &amp; overview</td>
+              <td class="col-presenter"></td>
+            </tr>
+            <tr>
+              <td class="col-time">9:30–9:50</td>
+              <td class="col-section">Leveraging semantic IDs in recommender systems</td>
+              <td class="col-presenter"></td>
+            </tr>
+            <tr class="is-break">
+              <td class="col-time">9:50–10:05</td>
+              <td class="col-section">Coffee break</td>
+              <td class="col-presenter"></td>
+            </tr>
+            <tr>
+              <td class="col-time">10:05–10:30</td>
+              <td class="col-section">Hands-on: building and using semantic IDs</td>
+              <td class="col-presenter"></td>
+            </tr>
+            <tr>
+              <td class="col-time">10:30–10:55</td>
+              <td class="col-section">Multimodality and collaborative signals</td>
+              <td class="col-presenter"></td>
+            </tr>
+            <tr>
+              <td class="col-time">10:55–11:20</td>
+              <td class="col-section">Cold-start mitigation and cross-domain transfer</td>
+              <td class="col-presenter"></td>
+            </tr>
+            <tr class="is-break">
+              <td class="col-time">11:20–11:35</td>
+              <td class="col-section">Coffee break</td>
+              <td class="col-presenter"></td>
+            </tr>
+            <tr>
+              <td class="col-time">11:35–12:00</td>
+              <td class="col-section">Hands-on: cross-domain usage of semantic IDs</td>
+              <td class="col-presenter"></td>
+            </tr>
+            <tr>
+              <td class="col-time">12:00–12:15</td>
+              <td class="col-section">Future directions and open challenges</td>
+              <td class="col-presenter"></td>
+            </tr>
+            <tr>
+              <td class="col-time">12:15–12:30</td>
+              <td class="col-section">Q&amp;A and open discussion</td>
+              <td class="col-presenter"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="tba-note">
+        ℹ️ Exact session date, start time, and per-section presenter assignments will be announced once CIKM&nbsp;'26
+        releases the official program.
+      </p>
+
+      <p>
+        <strong>Format:</strong> both hands-on sessions use the Amazon Reviews dataset, with instructions and code
+        provided as self-contained Jupyter notebooks that run on free-tier resources such as Google Colab.
+        Content-based item embeddings and baseline models are pre-computed so the sessions stay focused on semantic
+        IDs. Attendees should bring their own laptop for the hands-on sessions; presentation requires an LCD
+        projector, at least one projection screen, and microphones.
+      </p>
+
+      <hr>
+
+      <h2 id="presenters">Presenters</h2>
+      <div class="people-grid">
+        <a class="person-card" href="https://www.zhe-li.me/" target="_blank" rel="noopener">
+          <img class="person-photo" src="assets/img/profiles/presenter-1.jpg" alt="Roger Zhe Li">
+          <div>
+            <p class="person-name">Roger Zhe Li</p>
+            <p class="person-affiliation">Huawei Ireland Research Center</p>
+          </div>
+        </a>
+        <a class="person-card" href="http://saghiles.github.io/" target="_blank" rel="noopener">
+          <img class="person-photo" src="assets/img/profiles/presenter-2.jpg" alt="Aghiles Salah">
+          <div>
+            <p class="person-name">Aghiles Salah</p>
+            <p class="person-affiliation">Huawei Ireland Research Center</p>
+          </div>
+        </a>
+        <a class="person-card" href="https://metesertkan.github.io/" target="_blank" rel="noopener">
+          <img class="person-photo" src="assets/img/profiles/presenter-3.png" alt="Mete Sertkan">
+          <div>
+            <p class="person-name">Mete Sertkan</p>
+            <p class="person-affiliation">Huawei Ireland Research Center</p>
+          </div>
+        </a>
+        <a class="person-card" href="presenters.html">
+          <img class="person-photo" src="assets/img/profiles/presenter-4.svg" alt="Changhong Jin">
+          <div>
+            <p class="person-name">Changhong Jin</p>
+            <p class="person-affiliation">University College Dublin</p>
+          </div>
+        </a>
+        <a class="person-card" href="presenters.html">
+          <img class="person-photo" src="assets/img/profiles/presenter-5.svg" alt="Yingjie Niu">
+          <div>
+            <p class="person-name">Yingjie Niu</p>
+            <p class="person-affiliation">Huawei Ireland Research Center</p>
+          </div>
+        </a>
+        <a class="person-card" href="https://people.ucd.ie/ruihai.dong/" target="_blank" rel="noopener">
+          <img class="person-photo" src="assets/img/profiles/presenter-6.jpg" alt="Ruihai Dong">
+          <div>
+            <p class="person-name">Ruihai Dong</p>
+            <p class="person-affiliation">University College Dublin</p>
+          </div>
+        </a>
+        <a class="person-card" href="https://people.ucd.ie/barry.smyth" target="_blank" rel="noopener">
+          <img class="person-photo" src="assets/img/profiles/presenter-7.png" alt="Barry Smyth">
+          <div>
+            <p class="person-name">Barry Smyth</p>
+            <p class="person-affiliation">University College Dublin</p>
+          </div>
+        </a>
+      </div>
+      <p><a href="presenters.html">Full presenter bios →</a></p>
+
+      <hr>
+
+      <h2 id="citation">Citation</h2>
+      <p>If you find this tutorial useful, please consider citing:</p>
+      <div class="bibtex-block">
+        <button class="bibtex-copy" onclick="copyBibtex()" id="bibtex-copy-btn">Copy</button>
+        <pre><code id="bibtex-text">@inproceedings{li2026idsmeansomething,
+  title     = {IDs That Mean Something: A Hands-On Tutorial on Semantic IDs for
+               Recommender Systems},
+  author    = {Li, Roger Zhe and Salah, Aghiles and Sertkan, Mete and Jin, Changhong
+               and Niu, Yingjie and Dong, Ruihai and Smyth, Barry},
+  booktitle = {Proceedings of the 35th ACM International Conference on Information
+               and Knowledge Management (CIKM '26)},
+  year      = {2026},
+  isbn      = {979-8-4007-2539-5},
+  location  = {Rome, Italy},
+  numpages  = {5},
+  doi       = {10.1145/3799682.3839274},
+  url       = {https://doi.org/10.1145/3799682.3839274}
+}</code></pre>
+      </div>
+
+      <hr>
+
+      <h2 id="links">Quick Links</h2>
+      <ul class="plain">
+        <li><strong><a href="papers.html">Papers</a></strong></li>
+        <li><strong>Code &amp; Notebooks</strong> — <span class="tbd">to be released upon acceptance</span></li>
+      </ul>
+
+      <hr>
+
+      <p><em>Maintained by <a href="https://www.zhe-li.me/" target="_blank" rel="noopener">Roger Zhe Li</a> — Last updated: <span id="last-updated">2026</span></em></p>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      IDs That Mean Something · CIKM '26, Rome, Italy · <a href="editions.html">Editions</a> · <a href="#">Code &amp; notebooks (upon acceptance)</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+  <script>initTheme();</script>
+  <script>
+    function copyBibtex() {
+      var text = document.getElementById("bibtex-text").textContent;
+      navigator.clipboard.writeText(text).then(function () {
+        var btn = document.getElementById("bibtex-copy-btn");
+        var original = btn.textContent;
+        btn.textContent = "Copied!";
+        setTimeout(function () { btn.textContent = original; }, 1500);
+      });
+    }
+  </script>
+</body>
+</html>
