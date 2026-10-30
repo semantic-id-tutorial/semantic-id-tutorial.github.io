@@ -612,3 +612,165 @@ ul.plain li {
   font-size: 1.05rem;
   color: var(--text-color-light);
 }
+
+/* ---------------------------------------------------------------------------
+   Homepage hero + venue card
+--------------------------------------------------------------------------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--divider-color);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 100% 0%, var(--code-bg-color), transparent 60%),
+    var(--card-bg-color);
+}
+
+.hero-title {
+  font-size: 2.4rem;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem;
+}
+
+.hero-lede {
+  font-size: 1.1rem;
+  color: var(--text-color-light);
+  margin: 0;
+}
+
+.hero > * {
+  min-width: 0;
+}
+
+.hero-art {
+  margin: 0;
+}
+
+.hero-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.hero-svg .col-label {
+  fill: var(--text-color-light);
+  font-family: inherit;
+  font-size: 12px;
+  text-anchor: middle;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-svg .raw {
+  fill: none;
+  stroke: var(--text-color-light);
+  stroke-dasharray: 4 3;
+}
+
+.hero-svg .raw-label {
+  fill: var(--text-color-light);
+  font-size: 15px;
+  text-anchor: middle;
+}
+
+.hero-svg .arrow {
+  stroke: var(--text-color-light);
+  stroke-width: 1.5;
+}
+
+.hero-svg .arrow-head {
+  fill: var(--text-color-light);
+}
+
+.hero-svg .tok {
+  fill: var(--bg-color);
+  stroke: var(--divider-color);
+  stroke-width: 1.5;
+}
+
+.hero-svg .tok.shared {
+  fill: var(--code-bg-color);
+  stroke: var(--theme-color);
+}
+
+.hero-svg .tok-label {
+  fill: var(--text-color);
+  font-size: 17px;
+  text-anchor: middle;
+}
+
+.hero-svg .tok-label.shared {
+  fill: var(--theme-color);
+  font-weight: 700;
+}
+
+.hero-svg .prefix-box {
+  fill: none;
+  stroke: var(--theme-color);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 4;
+}
+
+.hero-svg .prefix-label {
+  fill: var(--theme-color);
+  font-size: 12px;
+  text-anchor: middle;
+}
+
+.venue-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--divider-color);
+  border-radius: 12px;
+  background: var(--card-bg-color);
+}
+
+.venue-card p {
+  margin: 0;
+  color: var(--text-color-light);
+}
+
+.venue-card strong {
+  color: var(--text-color);
+}
+
+/* The CIKM logo has dark lettering, so it sits on a white badge in both themes. */
+.venue-logo {
+  flex: 0 0 auto;
+  display: block;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: #ffffff;
+  line-height: 0;
+}
+
+.venue-logo img {
+  width: 96px;
+  height: auto;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .venue-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
