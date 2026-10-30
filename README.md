@@ -47,7 +47,7 @@ proposal). Still outstanding, marked with `<span class="tbd">TBD</span>` or note
 3. **Presenters**: duplicate a `.person-card` (compact, used on `index.html` /
    `tutorial.html`) or `.bio-card` (full bio, used on `presenters.html`) block for each
    new person; delete a block to remove one.
-4. **Papers**: the reading list lives in
+4. **Reading list** (`papers.html`, labelled "Reading List" in the nav): the list lives in
    [awesome-semantic-id](https://github.com/semantic-id-tutorial/awesome-semantic-id) —
    add papers there, not here. `papers.html` only links to its sections; update the
    topic cards if the repo's section headings (and thus anchors) change.
