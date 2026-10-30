@@ -1,4 +1,4 @@
-# SemID @ CIKM 2026 — tutorial website
+# SemID Tutorial — website
 
 **IDs That Mean Something: A Hands-On Tutorial on Semantic IDs for Recommender Systems**
 CIKM '26, November 7–11, 2026, Rome, Italy. https://doi.org/10.1145/3799682.3839274
@@ -50,17 +50,31 @@ proposal). Still outstanding, marked with `<span class="tbd">TBD</span>` or note
    [awesome-semantic-id](https://github.com/semantic-id-tutorial/awesome-semantic-id) —
    add papers there, not here. `papers.html` only links to its sections; update the
    topic cards if the repo's section headings (and thus anchors) change.
-5. **Editions**: when this tutorial is accepted at a new venue, add a new
-   `.edition-item` block to `editions.html` (an example is left commented out) and
-   update the nav — the nav is currently identical across all five pages, so update it
-   in each file (a simple `sed` across `*.html` works, since the markup is the same
-   string on every page). Once CIKM '26 has taken place, move its entry under "Past
-   editions", give it an `edition-tag future`-style badge reading "Past", and link an
-   archived snapshot of the tutorial page if you keep one (e.g. `editions/cikm26/`).
+5. **Editions**: see the checklist below. The nav and footer are identical across all
+   five pages, so a change to either must be made in every file (a `sed` across
+   `*.html` works, since the markup is the same string on every page).
 6. Remove the `.tbd` markers (`<span class="tbd">TBD</span>`) as you fill in the
    remaining real info (presenters, slides link).
 7. **Favicon**: swap `assets/img/favicon.svg` for your own icon if you want something
    other than the generic red "T" mark.
+
+## New edition checklist
+
+The nav, footer, homepage hero, and page titles (except `tutorial.html`) are
+edition-neutral. Edition-specific details live in these places:
+
+1. **Archive the current edition.** Copy `tutorial.html` to `editions/cikm26.html`
+   (fix its relative links to `../`), then in `editions.html` move the CIKM '26 entry
+   under "Past editions", give it a badge reading "Past", and link the archived page.
+2. **Homepage venue card** (`index.html`, `.venue-card`): swap the logo in
+   `assets/img/venues/`, the date / time / room line, the address, and the Directions
+   link. Also update the `<meta name="description">` in `index.html`, which names the
+   current edition.
+3. **`tutorial.html`**: the edition banner, the date / venue line above the schedule,
+   the schedule table, the `<title>`, and the citation block and BibTeX if the new
+   edition has its own paper.
+4. **`editions.html`**: add the new edition as "Current".
+5. **README**: update the top-level venue line and the outstanding items above.
 
 ## Preview locally
 
