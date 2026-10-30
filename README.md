@@ -1,4 +1,4 @@
-# SemID Tutorial — website
+# SemID4Rec — tutorial website
 
 **IDs That Mean Something: A Hands-On Tutorial on Semantic IDs for Recommender Systems**
 CIKM '26, November 7–11, 2026, Rome, Italy. https://doi.org/10.1145/3799682.3839274
