@@ -28,16 +28,15 @@ top of the file — edit `--theme-color` etc. to re-theme) and `assets/js/site.j
 Content is transcribed from `IDs_That_Mean_Something__...pdf` (the CIKM '26 tutorial
 proposal). Still outstanding, marked with `<span class="tbd">TBD</span>` or noted below:
 
-- **Session room** at the Rome venue, and the **per-section presenter assignments** in
-  the `tutorial.html` schedule table (proposal doesn't specify who presents which
-  section, so the "Presenter" column is left blank — fill in as the program firms up)
+- **Per-section presenter assignments** in the `tutorial.html` schedule table — the
+  "Presenter" column shows TBD until the split is decided
+- **Slides link** — the "Slides" entry under Quick Links in `tutorial.html` shows TBD
+  until the deck is uploaded
 - **Two presenter photos** — Changhong Jin and Yingjie Niu are still placeholder avatar
   icons (`assets/img/profiles/presenter-4.svg`, `presenter-5.svg`); no public homepage
   photo was found for either. The other five (Roger Zhe Li, Aghiles Salah, Mete Sertkan,
   Ruihai Dong, Barry Smyth) are real photos pulled from their personal/institutional
   homepages
-- **Code & notebooks link** — the proposal says these are released "upon acceptance"; the
-  footer/quick-links currently point at `#`
 
 ## Customize
 
@@ -47,9 +46,9 @@ proposal). Still outstanding, marked with `<span class="tbd">TBD</span>` or note
    overwrite the existing `presenter-N.jpg`/`.png` file (any format works — just update
    the `src=` extension in `index.html`, `tutorial.html`, and `presenters.html` if it
    changes).
-2. **Schedule**: fill in the "Presenter" column in the `tutorial.html` schedule table
-   (currently blank) once section-to-presenter assignments are decided, and update the
-   tentative times once CIKM '26 publishes the official program.
+2. **Schedule**: the times in `tutorial.html` follow the official CIKM '26 slot
+   (Sat 7 Nov, 14:00–18:30, Aula 7, tea break 16:00–16:30). Replace the TBD cells in the
+   "Presenter" column once section-to-presenter assignments are decided.
 3. **Presenters**: duplicate a `.person-card` (compact, used on `index.html` /
    `tutorial.html`) or `.bio-card` (full bio, used on `presenters.html`) block for each
    new person; delete a block to remove one.
@@ -63,7 +62,7 @@ proposal). Still outstanding, marked with `<span class="tbd">TBD</span>` or note
    in each file (a simple `sed` across `*.html` works, since the markup is the same
    string on every page).
 6. Remove the `.tbd` markers (`<span class="tbd">TBD</span>`) as you fill in the
-   remaining real info (room number, code link).
+   remaining real info (presenters, slides link).
 7. **Favicon**: swap `assets/img/favicon.svg` for your own icon if you want something
    other than the generic red "T" mark.
 
