@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Papers — IDs That Mean Something (CIKM '26)</title>
-  <meta name="description" content="Curated bibliography on semantic IDs for recommender systems — raw IDs, generative and discriminative applications, multimodality, and cross-domain transfer.">
+  <meta name="description" content="Reading list on semantic IDs for recommender systems, maintained as the awesome-semantic-id GitHub repository.">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <link rel="stylesheet" href="assets/css/style.css">
   <script>
@@ -14,56 +14,6 @@
       if (saved !== "system") document.documentElement.setAttribute("data-theme", saved);
     })();
   </script>
-  <style>
-    #paper-search {
-      width: 100%;
-      padding: 0.6rem 0.9rem;
-      border-radius: 8px;
-      border: 1px solid var(--divider-color);
-      background: var(--card-bg-color);
-      color: var(--text-color);
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-    }
-    .paper-filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-    .paper-filters button {
-      background: var(--card-bg-color);
-      border: 1px solid var(--divider-color);
-      color: var(--text-color-light);
-      border-radius: 999px;
-      padding: 0.3rem 0.85rem;
-      font-size: 0.82rem;
-      cursor: pointer;
-    }
-    .paper-filters button.active {
-      border-color: var(--theme-color);
-      color: var(--theme-color);
-      font-weight: 600;
-    }
-    .paper-item {
-      border-bottom: 1px solid var(--divider-color);
-      padding: 0.9rem 0;
-    }
-    .paper-item:last-child { border-bottom: none; }
-    .paper-title { font-weight: 700; margin: 0 0 0.2rem; }
-    .paper-meta { color: var(--text-color-light); font-size: 0.85rem; margin: 0 0 0.3rem; }
-    .paper-tag {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: var(--theme-color);
-      background: var(--code-bg-color);
-      border-radius: 999px;
-      padding: 0.1rem 0.55rem;
-      margin-right: 0.3rem;
-    }
-    .paper-item.hidden { display: none; }
-  </style>
 </head>
 <body>
 
@@ -86,7 +36,8 @@
     <div class="container">
 
       <h1 class="page-title">Papers</h1>
-      <p class="lede">Curated list of key papers for the tutorial — from raw IDs to semantic IDs. Search and filter by tag.</p>
+      <p class="lede">The reading list for this tutorial is maintained on GitHub as
+        <a href="https://github.com/semantic-id-tutorial/awesome-semantic-id" target="_blank" rel="noopener">awesome-semantic-id</a>.</p>
 
       <div class="page-citation">
         Roger Zhe Li, et al. (2026). IDs That Mean Something: A Hands-On Tutorial on Semantic IDs for Recommender
@@ -94,103 +45,62 @@
         <a href="tutorial.html">[[tutorial]]</a>
       </div>
 
-      <hr>
+      <p>
+        The list starts from <strong>TIGER</strong> (NeurIPS '23), the paper that made generating semantic IDs a
+        recommendation paradigm. It covers 130+ papers, grouped to follow the tutorial outline (Sections 2.3–2.7).
+        Each paper links to its official venue version (or arXiv) and to code where available. We keep the list up
+        to date, and contributions are welcome through pull requests.
+      </p>
 
-      <input id="paper-search" type="search" placeholder="Search papers by title, author, or keyword…" oninput="filterPapers()">
-      <div class="paper-filters" id="paper-filters">
-        <button data-tag="all" class="active" onclick="setTagFilter('all')">All</button>
-        <button data-tag="theory" onclick="setTagFilter('theory')">Foundational</button>
-        <button data-tag="method" onclick="setTagFilter('method')">Method</button>
-        <button data-tag="application" onclick="setTagFilter('application')">Application</button>
-        <button data-tag="benchmark" onclick="setTagFilter('benchmark')">Benchmark</button>
+      <div class="btn-row">
+        <a class="btn primary" href="https://github.com/semantic-id-tutorial/awesome-semantic-id" target="_blank" rel="noopener">Browse the full reading list on GitHub →</a>
+        <a class="btn" href="https://github.com/semantic-id-tutorial/awesome-semantic-id#how-to-contribute" target="_blank" rel="noopener">Suggest a paper</a>
       </div>
 
-      <div id="paper-list">
-        <div class="paper-item" data-tags="theory">
-          <p class="paper-title">Wide &amp; Deep Learning for Recommender Systems</p>
-          <p class="paper-meta">Cheng, Koc, Harmsen, et al. — DLRS @ RecSys 2016</p>
-          <span class="paper-tag">Foundational</span>
-          <span class="paper-tag">Raw IDs</span>
-        </div>
-        <div class="paper-item" data-tags="theory benchmark">
-          <p class="paper-title">Image-Based Recommendations on Styles and Substitutes</p>
-          <p class="paper-meta">McAuley, Targett, Shi, van den Hengel — SIGIR 2015</p>
-          <span class="paper-tag">Benchmark</span>
-          <span class="paper-tag">Amazon Reviews dataset</span>
-        </div>
-        <div class="paper-item" data-tags="method">
-          <p class="paper-title">Recommender Systems with Generative Retrieval (TIGER)</p>
-          <p class="paper-meta">Rajput, Mehta, Singh, et al. — NeurIPS 2023</p>
-          <span class="paper-tag">Method</span>
-          <span class="paper-tag">Generative</span>
-        </div>
-        <div class="paper-item" data-tags="application">
-          <p class="paper-title">Better Generalization with Semantic IDs: A Case Study in Ranking for Recommendations</p>
-          <p class="paper-meta">Singh, Vu, Mehta, et al. (Google/YouTube) — RecSys 2024</p>
-          <span class="paper-tag">Application</span>
-          <span class="paper-tag">Discriminative</span>
-        </div>
-        <div class="paper-item" data-tags="application">
-          <p class="paper-title">QARM: Quantitative Alignment Multi-Modal Recommendation at Kuaishou</p>
-          <p class="paper-meta">Luo, Cao, Sun, et al. — CIKM 2025</p>
-          <span class="paper-tag">Application</span>
-          <span class="paper-tag">Industry deployment</span>
-        </div>
-        <div class="paper-item" data-tags="application">
-          <p class="paper-title">Enhancing Embedding Representation Stability in Recommendation Systems with Semantic ID</p>
-          <p class="paper-meta">Zheng, Huang, Pedchenko, et al. (Meta) — RecSys 2025</p>
-          <span class="paper-tag">Application</span>
-          <span class="paper-tag">Industry deployment</span>
-        </div>
-        <div class="paper-item" data-tags="application">
-          <p class="paper-title">DAS: Dual-Aligned Semantic IDs Empowered Industrial Recommender System</p>
-          <p class="paper-meta">Ye, Sun, Shi, Peng, Wu, Jiang — CIKM 2025</p>
-          <span class="paper-tag">Application</span>
-          <span class="paper-tag">Industry deployment</span>
-        </div>
-        <div class="paper-item" data-tags="method">
-          <p class="paper-title">Empowering Large Language Model for Sequential Recommendation via Multimodal Embeddings and Semantic IDs</p>
-          <p class="paper-meta">Wang, Pan, Li, et al. — CIKM 2025</p>
-          <span class="paper-tag">Method</span>
-          <span class="paper-tag">Collaborative signals</span>
-        </div>
-        <div class="paper-item" data-tags="method">
-          <p class="paper-title">Beyond Unimodal Boundaries: Generative Recommendation with Multimodal Semantics</p>
-          <p class="paper-meta">Zhu, Ju, Liu, Koutra, Shah, Zhao — CoRR 2025</p>
-          <span class="paper-tag">Method</span>
-          <span class="paper-tag">Multimodality</span>
-        </div>
-        <div class="paper-item" data-tags="method">
-          <p class="paper-title">FusID: Modality-Fused Semantic IDs for Generative Music Recommendation</p>
-          <p class="paper-meta">Kim, Hou, McAuley — CoRR 2026</p>
-          <span class="paper-tag">Method</span>
-          <span class="paper-tag">Multimodality</span>
-        </div>
-        <div class="paper-item" data-tags="method">
-          <p class="paper-title">Generative Multi-Target Cross-Domain Recommendation</p>
-          <p class="paper-meta">Jin, Zhang, Feng, He — CoRR 2025</p>
-          <span class="paper-tag">Method</span>
-          <span class="paper-tag">Cross-domain</span>
-        </div>
-        <div class="paper-item" data-tags="method">
-          <p class="paper-title">From IDs to Semantics: A Generative Framework for Cross-Domain Recommendation with Adaptive Semantic Tokenization</p>
-          <p class="paper-meta">Hu, Lu, Wang — AAAI 2026</p>
-          <span class="paper-tag">Method</span>
-          <span class="paper-tag">Cross-domain</span>
-        </div>
-        <div class="paper-item" data-tags="method">
-          <p class="paper-title">Semantic IDs for Joint Generative Search and Recommendation</p>
-          <p class="paper-meta">Penha, D'Amico, De Nadai, et al. — RecSys 2025</p>
-          <span class="paper-tag">Method</span>
-          <span class="paper-tag">Cross-task unification</span>
-        </div>
-        <div class="paper-item tbd-row" data-tags="method theory application benchmark">
-          <p class="paper-title">More papers <span class="tbd">TBD</span></p>
-          <p class="paper-meta">
-            The full reference list (29 entries) is in the tutorial proposal. Duplicate a <code>.paper-item</code>
-            block above for each additional paper, and set <code>data-tags</code> to match the filter buttons.
-          </p>
-        </div>
+      <hr>
+
+      <h2 id="topics">Topics</h2>
+      <div class="card-grid">
+        <a class="card" href="https://github.com/semantic-id-tutorial/awesome-semantic-id#background-from-raw-ids-to-semantic-ids" target="_blank" rel="noopener">
+          <h4 class="card-title">Background: From Raw IDs to Semantic IDs</h4>
+          <p class="card-text">Arbitrary integer IDs, content as side input, and why item identity needed to change.</p>
+        </a>
+        <a class="card" href="https://github.com/semantic-id-tutorial/awesome-semantic-id#semantic-id-construction--tokenization" target="_blank" rel="noopener">
+          <h4 class="card-title">Construction &amp; Tokenization</h4>
+          <p class="card-text">Quantization and tokenization architectures that turn item content into discrete token sequences.</p>
+        </a>
+        <a class="card" href="https://github.com/semantic-id-tutorial/awesome-semantic-id#generative-recommendation-with-semantic-ids" target="_blank" rel="noopener">
+          <h4 class="card-title">Generative Recommendation</h4>
+          <p class="card-text">Semantic IDs as the backbone of generative retrieval and recommendation, starting from TIGER.</p>
+        </a>
+        <a class="card" href="https://github.com/semantic-id-tutorial/awesome-semantic-id#semantic-ids-in-discriminative-ranking--retrieval" target="_blank" rel="noopener">
+          <h4 class="card-title">Discriminative Ranking &amp; Retrieval</h4>
+          <p class="card-text">Semantic IDs as structured input features for ranking, CTR prediction, and embedding-based retrieval.</p>
+        </a>
+        <a class="card" href="https://github.com/semantic-id-tutorial/awesome-semantic-id#multimodality-in-semantic-id-construction" target="_blank" rel="noopener">
+          <h4 class="card-title">Multimodality</h4>
+          <p class="card-text">Fusing text, image, audio, and video into semantic ID construction.</p>
+        </a>
+        <a class="card" href="https://github.com/semantic-id-tutorial/awesome-semantic-id#collaborative-signals-in-semantic-id-construction" target="_blank" rel="noopener">
+          <h4 class="card-title">Collaborative Signals</h4>
+          <p class="card-text">Aligning content-derived IDs with collaborative and behavioral signals.</p>
+        </a>
+        <a class="card" href="https://github.com/semantic-id-tutorial/awesome-semantic-id#cold-start-recommendation-with-semantic-ids" target="_blank" rel="noopener">
+          <h4 class="card-title">Cold-Start</h4>
+          <p class="card-text">Using shared semantic structure to recommend new and long-tail items.</p>
+        </a>
+        <a class="card" href="https://github.com/semantic-id-tutorial/awesome-semantic-id#cross-domain-transfer-with-semantic-ids" target="_blank" rel="noopener">
+          <h4 class="card-title">Cross-Domain Transfer</h4>
+          <p class="card-text">Transferring knowledge across domains and platforms through semantic IDs.</p>
+        </a>
+        <a class="card" href="https://github.com/semantic-id-tutorial/awesome-semantic-id#cross-task-unification--semantic-planning" target="_blank" rel="noopener">
+          <h4 class="card-title">Cross-Task Unification &amp; Planning</h4>
+          <p class="card-text">One representation for recommendation, search, and other tasks.</p>
+        </a>
+        <a class="card" href="https://github.com/semantic-id-tutorial/awesome-semantic-id#related-surveys--tutorials" target="_blank" rel="noopener">
+          <h4 class="card-title">Surveys &amp; Tutorials</h4>
+          <p class="card-text">Surveys and tutorials on generative recommendation and semantic IDs.</p>
+        </a>
       </div>
 
       <hr>
@@ -208,26 +118,5 @@
 
   <script src="assets/js/site.js"></script>
   <script>initTheme();</script>
-  <script>
-    let activeTag = "all";
-
-    function setTagFilter(tag) {
-      activeTag = tag;
-      document.querySelectorAll("#paper-filters button").forEach(function (btn) {
-        btn.classList.toggle("active", btn.getAttribute("data-tag") === tag);
-      });
-      filterPapers();
-    }
-
-    function filterPapers() {
-      var query = document.getElementById("paper-search").value.trim().toLowerCase();
-      document.querySelectorAll(".paper-item").forEach(function (item) {
-        var tags = (item.getAttribute("data-tags") || "").split(" ");
-        var matchesTag = activeTag === "all" || tags.indexOf(activeTag) !== -1;
-        var matchesQuery = !query || item.textContent.toLowerCase().indexOf(query) !== -1;
-        item.classList.toggle("hidden", !(matchesTag && matchesQuery));
-      });
-    }
-  </script>
 </body>
 </html>

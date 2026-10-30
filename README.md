@@ -17,7 +17,7 @@ A plain static HTML/CSS/JS site (no build step, no Jekyll/Ruby) styled after the
 | --------------------- | --------------------------------------------------------------------- |
 | `index.html`          | Home/About — abstract-level overview + links to every other page      |
 | `tutorial.html`       | Learning goals, audience, schedule table, BibTeX citation, all 7 presenters |
-| `papers.html`         | Curated bibliography (13 of the proposal's 29 references) with client-side search/tag filter |
+| `papers.html`         | Intro to the reading list, with topic links into [awesome-semantic-id](https://github.com/semantic-id-tutorial/awesome-semantic-id) |
 | `presenters.html`     | Full bios for all 7 presenters, with photos                           |
 | `editions.html`       | Current edition (CIKM '26), plus placeholders for past/upcoming editions |
 
@@ -38,8 +38,6 @@ proposal). Still outstanding, marked with `<span class="tbd">TBD</span>` or note
   homepages
 - **Code & notebooks link** — the proposal says these are released "upon acceptance"; the
   footer/quick-links currently point at `#`
-- The **papers list** only includes 13 of the 29 references from the proposal — see the
-  `More papers` row at the bottom of `papers.html`
 
 ## Customize
 
@@ -55,9 +53,10 @@ proposal). Still outstanding, marked with `<span class="tbd">TBD</span>` or note
 3. **Presenters**: duplicate a `.person-card` (compact, used on `index.html` /
    `tutorial.html`) or `.bio-card` (full bio, used on `presenters.html`) block for each
    new person; delete a block to remove one.
-4. **Papers**: duplicate a `.paper-item` block in `papers.html`; set `data-tags` to
-   match the filter buttons (or add new filter buttons). The remaining 16 references
-   from the proposal's bibliography are easy to add this way.
+4. **Papers**: the reading list lives in
+   [awesome-semantic-id](https://github.com/semantic-id-tutorial/awesome-semantic-id) —
+   add papers there, not here. `papers.html` only links to its sections; update the
+   topic cards if the repo's section headings (and thus anchors) change.
 5. **Editions**: when this tutorial is accepted at a new venue, add a new
    `.edition-item` block to `editions.html` (an example is left commented out) and
    update the nav — the nav is currently identical across all five pages, so update it
