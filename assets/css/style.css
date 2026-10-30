@@ -774,3 +774,44 @@ ul.plain li {
     align-items: flex-start;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Venue map (OpenStreetMap embed). Dark themes invert the tiles so the map
+   does not glare; hue-rotate keeps water and parks roughly their usual colors.
+--------------------------------------------------------------------------- */
+
+.venue-map {
+  border: 1px solid var(--divider-color);
+  border-radius: 12px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.venue-map iframe {
+  display: block;
+  width: 100%;
+  height: 360px;
+  border: 0;
+}
+
+html[data-theme="dark"] .venue-map iframe {
+  filter: invert(0.9) hue-rotate(180deg);
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]):not([data-theme="dark"]) .venue-map iframe {
+    filter: invert(0.9) hue-rotate(180deg);
+  }
+}
+
+.venue-map-credit {
+  margin: 0.4rem 0 0;
+  font-size: 0.85rem;
+  text-align: right;
+}
+
+@media (max-width: 760px) {
+  .venue-map iframe {
+    height: 280px;
+  }
+}
