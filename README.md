@@ -30,8 +30,9 @@ proposal). Still outstanding, marked with `<span class="tbd">TBD</span>` or note
 
 - **Per-section presenter assignments** in the `tutorial.html` schedule table — the
   "Presenter" column shows TBD until the split is decided
-- **Slides link** — the "Slides" entry under Quick Links in `tutorial.html` shows TBD
-  until the deck is uploaded
+- **Slides link** — the "Slides (TBD)" button under the title of `tutorial.html` is
+  disabled until the deck is uploaded; replace the `<span class="btn is-disabled">` with
+  an `<a class="btn" href="...">Slides</a>` link
 
 ## Customize
 

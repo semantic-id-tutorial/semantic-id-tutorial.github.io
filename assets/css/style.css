@@ -815,3 +815,14 @@ html[data-theme="dark"] .venue-map iframe {
     height: 280px;
   }
 }
+
+.btn.is-disabled {
+  border-style: dashed;
+  color: var(--text-color-light);
+  cursor: default;
+}
+
+.btn.is-disabled:hover {
+  border-color: var(--divider-color);
+  color: var(--text-color-light);
+}
