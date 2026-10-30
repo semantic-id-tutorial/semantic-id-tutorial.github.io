@@ -19,7 +19,7 @@ A plain static HTML/CSS/JS site (no build step, no Jekyll/Ruby) styled after the
 | `tutorial.html`       | Learning goals, audience, schedule table, BibTeX citation, all 7 presenters |
 | `papers.html`         | Intro to the reading list, with topic links into [awesome-semantic-id](https://github.com/semantic-id-tutorial/awesome-semantic-id) |
 | `presenters.html`     | Full bios for all 7 presenters, with photos                           |
-| `editions.html`       | Current edition (CIKM '26), plus placeholders for past/upcoming editions |
+| `editions.html`       | Edition archive; not linked from the site while there is only one edition |
 
 Every page shares `assets/css/style.css` (all colors are CSS custom properties at the
 top of the file — edit `--theme-color` etc. to re-theme) and `assets/js/site.js`
@@ -74,7 +74,12 @@ edition-neutral. Edition-specific details live in these places:
 3. **`tutorial.html`**: the edition banner, the date / venue line above the schedule,
    the schedule table, the `<title>`, and the citation block and BibTeX if the new
    edition has its own paper.
-4. **`editions.html`**: add the new edition as "Current".
+4. **`editions.html`**: add the new edition as "Current". While there is only one
+   edition, nothing links to this page. Once there are two, restore the entry points:
+   the "Editions" nav item (after "Presenters") and footer link on every page, an
+   Editions card in the homepage "On This Site" grid, and a "See all editions" link in
+   the `tutorial.html` banner. `editions.html` itself still has the nav and footer as
+   they should look.
 5. **README**: update the top-level venue line and the outstanding items above.
 
 ## Preview locally
