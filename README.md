@@ -54,7 +54,9 @@ proposal). Still outstanding, marked with `<span class="tbd">TBD</span>` or note
    `.edition-item` block to `editions.html` (an example is left commented out) and
    update the nav — the nav is currently identical across all five pages, so update it
    in each file (a simple `sed` across `*.html` works, since the markup is the same
-   string on every page).
+   string on every page). Once CIKM '26 has taken place, move its entry under "Past
+   editions", give it an `edition-tag future`-style badge reading "Past", and link an
+   archived snapshot of the tutorial page if you keep one (e.g. `editions/cikm26/`).
 6. Remove the `.tbd` markers (`<span class="tbd">TBD</span>`) as you fill in the
    remaining real info (presenters, slides link).
 7. **Favicon**: swap `assets/img/favicon.svg` for your own icon if you want something

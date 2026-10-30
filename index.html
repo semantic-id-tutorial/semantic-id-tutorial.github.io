@@ -36,41 +36,34 @@
     <div class="container">
 
       <h1 class="page-title">IDs That Mean Something</h1>
-      <p class="lede">A hands-on CIKM '26 tutorial on semantic IDs for recommender systems — from raw integer IDs to semantic IDs, across generative and discriminative applications.</p>
+      <p class="lede">A hands-on CIKM '26 tutorial on how recommender systems identify items — from arbitrary integer IDs to semantic IDs, for both generative and discriminative recommendation.</p>
       <p><strong>📍 Saturday, November 7, 2026 · 14:00–18:30 · Aula 7</strong>, Sapienza University of Rome, Faculty of Engineering (San Pietro in Vincoli). <a href="tutorial.html#outline">Schedule →</a></p>
 
       <hr>
 
       <h2 id="overview">Overview</h2>
       <p>
-        Traditional recommender systems rely on arbitrary integer IDs to identify items — identifiers that carry
-        no semantic information and force models to learn representations purely from interaction data. Semantic
-        IDs address this by encoding semantic information directly into the item identity itself: items become
-        discrete token sequences that reflect content, hierarchy, and relationships, rather than opaque lookup keys.
+        Recommender systems traditionally identify items by arbitrary integer IDs. These IDs carry no meaning, so
+        models must learn everything about an item from its interactions. Semantic IDs build meaning into the
+        identifier itself: each item is represented as a short sequence of discrete tokens derived from its
+        content, so related items share tokens.
       </p>
       <p>
-        This tutorial traces the evolution from raw IDs to semantic IDs as a scalable means of information
-        utilization in recommender systems, offering a comprehensive review of their development and applications
-        across multimodality, cold-start, and cross-domain recommendation. Hands-on exercises guide attendees
-        through building and evaluating semantic IDs, training models, and exploring cross-domain transfer, before
-        closing with open challenges such as dynamic semantic IDs and multi-stakeholder utility.
+        This tutorial traces how item identity has evolved from raw IDs, through auxiliary content, to semantic
+        IDs. We review how semantic IDs are constructed and used, and their applications to multimodal, cold-start,
+        and cross-domain recommendation. Two hands-on sessions walk attendees through building semantic IDs, using
+        them in a generative recommender, and transferring them across domains. We close with open challenges such
+        as ID stability as catalogs change and multi-stakeholder utility.
       </p>
 
       <hr>
 
-      <p><strong>This tutorial</strong> covers:</p>
+      <h2 id="learn">What You Will Learn</h2>
       <ul>
-        <li>The evolution from raw IDs → auxiliary content → semantic IDs, and why each stage falls short.</li>
-        <li>Semantic IDs in both generative (e.g., TIGER) and discriminative (e.g., YouTube ranking) recommendation.</li>
-        <li>Multimodality, collaborative signals, and cross-domain transfer via semantic IDs.</li>
-        <li>Hands-on construction and evaluation of semantic IDs on the Amazon Reviews dataset.</li>
-      </ul>
-
-      <p>This site curates:</p>
-      <ul>
-        <li><strong>Tutorial materials</strong> — session outline, learning goals, and hands-on notebooks.</li>
-        <li><strong>Papers</strong> — a curated reading list on semantic IDs, maintained on GitHub as <a href="https://github.com/semantic-id-tutorial/awesome-semantic-id" target="_blank" rel="noopener">awesome-semantic-id</a>.</li>
-        <li><strong>Presenters</strong> — the seven researchers behind the tutorial.</li>
+        <li>The evolution from raw IDs to auxiliary content to semantic IDs, and what each step adds.</li>
+        <li>Semantic IDs in generative (e.g., TIGER) and discriminative (e.g., YouTube ranking) recommendation.</li>
+        <li>Multimodality and collaborative signals in semantic IDs, cold-start, and cross-domain transfer.</li>
+        <li>Two hands-on sessions on Amazon Reviews: building semantic IDs, and transferring them across domains.</li>
       </ul>
 
       <hr>
@@ -91,7 +84,7 @@
         </a>
         <a class="card" href="editions.html">
           <h4 class="card-title">Editions</h4>
-          <p class="card-text">Past and upcoming editions of this tutorial.</p>
+          <p class="card-text">This and future editions of the tutorial.</p>
         </a>
       </div>
 
