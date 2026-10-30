@@ -23,7 +23,7 @@ A plain static HTML/CSS/JS site (no build step, no Jekyll/Ruby) styled after the
 
 Every page shares `assets/css/style.css` (all colors are CSS custom properties at the
 top of the file — edit `--theme-color` etc. to re-theme) and `assets/js/site.js`
-(dark/light/system theme toggle + mobile nav).
+(light/dark theme toggle that defaults to the system setting + mobile nav).
 
 Content is transcribed from `IDs_That_Mean_Something__...pdf` (the CIKM '26 tutorial
 proposal). Still outstanding, marked with `<span class="tbd">TBD</span>` or noted below:

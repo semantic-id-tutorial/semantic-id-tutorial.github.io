@@ -1,37 +1,47 @@
-// Theme toggle: cycles system -> light -> dark, persisted in localStorage.
-// Applied ASAP (called inline in <head>) to avoid a flash of the wrong theme.
-function initTheme() {
-  var saved = localStorage.getItem("theme-setting") || "system";
-  document.documentElement.setAttribute("data-theme-setting", saved);
-  applyTheme();
+// Theme toggle: switches between light and dark. Until the visitor picks one,
+// the site follows the system setting. The choice is saved in localStorage.
+// The inline script in each page's <head> applies a saved choice early to avoid
+// a flash of the wrong theme.
+var darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+function readSavedTheme() {
+  try {
+    var saved = localStorage.getItem("theme-setting");
+    return saved === "light" || saved === "dark" ? saved : null;
+  } catch (e) {
+    return null;
+  }
 }
 
-function applyTheme() {
-  var setting = document.documentElement.getAttribute("data-theme-setting");
-  var theme = setting;
-  if (setting === "system") {
-    theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    document.documentElement.removeAttribute("data-theme");
+function currentTheme() {
+  return document.documentElement.getAttribute("data-theme") || (darkQuery.matches ? "dark" : "light");
+}
+
+function initTheme() {
+  var saved = readSavedTheme();
+  if (saved) {
+    document.documentElement.setAttribute("data-theme", saved);
   } else {
-    document.documentElement.setAttribute("data-theme", theme);
+    document.documentElement.removeAttribute("data-theme");
   }
-  updateToggleIcon(setting);
+  updateToggleIcon();
 }
 
 function toggleTheme() {
-  var current = document.documentElement.getAttribute("data-theme-setting") || "system";
-  var next = current === "system" ? "light" : current === "light" ? "dark" : "system";
-  localStorage.setItem("theme-setting", next);
-  document.documentElement.setAttribute("data-theme-setting", next);
-  applyTheme();
+  var next = currentTheme() === "dark" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", next);
+  try {
+    localStorage.setItem("theme-setting", next);
+  } catch (e) {}
+  updateToggleIcon();
 }
 
-function updateToggleIcon(setting) {
+function updateToggleIcon() {
   var btn = document.getElementById("theme-toggle");
   if (!btn) return;
-  var icons = { system: "◐", light: "☀", dark: "☽" };
-  btn.textContent = icons[setting] || icons.system;
-  btn.setAttribute("title", "Theme: " + setting + " (click to change)");
+  var theme = currentTheme();
+  btn.textContent = theme === "dark" ? "☽" : "☀";
+  btn.setAttribute("title", theme === "dark" ? "Switch to light theme" : "Switch to dark theme");
 }
 
 function toggleNav() {
@@ -39,13 +49,9 @@ function toggleNav() {
   if (links) links.classList.toggle("open");
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  updateToggleIcon(document.documentElement.getAttribute("data-theme-setting") || "system");
+// Keep the icon in sync if the system theme changes while no choice is saved.
+if (darkQuery.addEventListener) {
+  darkQuery.addEventListener("change", updateToggleIcon);
+}
 
-  var lastUpdated = document.getElementById("last-updated");
-  if (lastUpdated) {
-    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    var now = new Date();
-    lastUpdated.textContent = months[now.getMonth()] + " " + now.getFullYear();
-  }
-});
+document.addEventListener("DOMContentLoaded", updateToggleIcon);
