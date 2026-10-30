@@ -32,20 +32,14 @@ proposal). Still outstanding, marked with `<span class="tbd">TBD</span>` or note
   "Presenter" column shows TBD until the split is decided
 - **Slides link** — the "Slides" entry under Quick Links in `tutorial.html` shows TBD
   until the deck is uploaded
-- **Two presenter photos** — Changhong Jin and Yingjie Niu are still placeholder avatar
-  icons (`assets/img/profiles/presenter-4.svg`, `presenter-5.svg`); no public homepage
-  photo was found for either. The other five (Roger Zhe Li, Aghiles Salah, Mete Sertkan,
-  Ruihai Dong, Barry Smyth) are real photos pulled from their personal/institutional
-  homepages
 
 ## Customize
 
-1. **Photos**: replace `assets/img/profiles/presenter-4.svg` and `presenter-5.svg` with
-   real headshots for Changhong Jin and Yingjie Niu (square images around 400×400px work
-   best, since they're cropped to a circle by CSS). To swap any other presenter's photo,
-   overwrite the existing `presenter-N.jpg`/`.png` file (any format works — just update
-   the `src=` extension in `index.html`, `tutorial.html`, and `presenters.html` if it
-   changes).
+1. **Photos**: all seven presenters have real headshots in `assets/img/profiles/`
+   (`presenter-1` … `presenter-7`, numbered in presenter order). To swap one, overwrite
+   the file; square images around 400×400px work best, since they're cropped to a circle
+   by CSS. If the file extension changes, update the `src=` in `index.html`,
+   `tutorial.html`, and `presenters.html`.
 2. **Schedule**: the times in `tutorial.html` follow the official CIKM '26 slot
    (Sat 7 Nov, 14:00–18:30, Aula 7, tea break 16:00–16:30). Replace the TBD cells in the
    "Presenter" column once section-to-presenter assignments are decided.
