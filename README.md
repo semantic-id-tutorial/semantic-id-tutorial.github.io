@@ -28,8 +28,6 @@ top of the file — edit `--theme-color` etc. to re-theme) and `assets/js/site.j
 Content is transcribed from `IDs_That_Mean_Something__...pdf` (the CIKM '26 tutorial
 proposal). Still outstanding, marked with `<span class="tbd">TBD</span>` or noted below:
 
-- **Per-section presenter assignments** in the `tutorial.html` schedule table — the
-  "Presenter" column shows TBD until the split is decided
 - **Slides link** — the "Slides (TBD)" button under the title of `tutorial.html` is
   disabled until the deck is uploaded; replace the `<span class="btn is-disabled">` with
   an `<a class="btn" href="...">Slides</a>` link
@@ -42,8 +40,8 @@ proposal). Still outstanding, marked with `<span class="tbd">TBD</span>` or note
    by CSS. If the file extension changes, update the `src=` in `index.html`,
    `tutorial.html`, and `presenters.html`.
 2. **Schedule**: the times in `tutorial.html` follow the official CIKM '26 slot
-   (Sat 7 Nov, 14:00–18:30, Aula 7, tea break 16:00–16:30). Replace the TBD cells in the
-   "Presenter" column once section-to-presenter assignments are decided.
+   (Sat 7 Nov, 14:00–18:30, Aula 7, tea break 16:00–16:30). The "Presenter" column lists who
+   presents each section.
 3. **Presenters**: duplicate a `.person-card` (compact, used on `index.html` /
    `tutorial.html`) or `.bio-card` (full bio, used on `presenters.html`) block for each
    new person; delete a block to remove one.
