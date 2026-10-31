@@ -781,32 +781,37 @@ ul.plain li {
 }
 
 /* ---------------------------------------------------------------------------
-   Venue map (OpenStreetMap embed). Dark themes invert the tiles so the map
-   does not glare; hue-rotate keeps water and parks roughly their usual colors.
+   Venue map (Leaflet + OpenStreetMap tiles, loaded when scrolled into view).
+   Dark themes invert only the tiles, so the orange pin keeps its color;
+   hue-rotate keeps water and parks roughly their usual colors.
 --------------------------------------------------------------------------- */
 
 .venue-map {
+  height: 360px;
   border: 1px solid var(--divider-color);
   border-radius: 12px;
   overflow: hidden;
-  line-height: 0;
+  background: var(--code-bg-color);
 }
 
-.venue-map iframe {
-  display: block;
-  width: 100%;
-  height: 360px;
-  border: 0;
-}
-
-html[data-theme="dark"] .venue-map iframe {
+html[data-theme="dark"] .venue-map .leaflet-tile-pane {
   filter: invert(0.9) hue-rotate(180deg);
 }
 
 @media (prefers-color-scheme: dark) {
-  html:not([data-theme="light"]):not([data-theme="dark"]) .venue-map iframe {
+  html:not([data-theme="light"]):not([data-theme="dark"]) .venue-map .leaflet-tile-pane {
     filter: invert(0.9) hue-rotate(180deg);
   }
+}
+
+.venue-pin {
+  background: none;
+  border: 0;
+}
+
+.venue-map .leaflet-tooltip {
+  font-family: inherit;
+  font-weight: 600;
 }
 
 .venue-map-credit {
@@ -816,7 +821,7 @@ html[data-theme="dark"] .venue-map iframe {
 }
 
 @media (max-width: 760px) {
-  .venue-map iframe {
+  .venue-map {
     height: 280px;
   }
 }
