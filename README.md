@@ -59,6 +59,20 @@ proposal). Still outstanding, marked with `<span class="tbd">TBD</span>` or note
 7. **Favicon**: swap `assets/img/favicon.svg` for your own icon if you want something
    other than the generic red "T" mark.
 
+## Cache busting
+
+Every page loads `assets/css/style.css?v=…` and `assets/js/site.js?v=…`, where the
+version is the first 8 characters of the file's MD5. GitHub Pages lets browsers cache
+these files for 10 minutes, so after editing either file, bump the version on every
+page so visitors get the new file right away:
+
+```sh
+CV=$(md5 -q assets/css/style.css | cut -c1-8); JV=$(md5 -q assets/js/site.js | cut -c1-8)
+sed -i '' -E "s#assets/css/style.css(\?v=[0-9a-f]+)?\"#assets/css/style.css?v=$CV\"#; s#assets/js/site.js(\?v=[0-9a-f]+)?\"#assets/js/site.js?v=$JV\"#" *.html
+```
+
+(`md5 -q` and `sed -i ''` are the macOS forms; on Linux use `md5sum` and `sed -i`.)
+
 ## New edition checklist
 
 The nav, footer, homepage hero, and page titles (except `tutorial.html`) are
