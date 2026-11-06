@@ -11,12 +11,20 @@ A plain static HTML/CSS/JS site (no build step, no Jekyll/Ruby) styled after the
   future editions of the tutorial can be added without restructuring the site
 - a Huawei-red accent theme (`--theme-color` in `assets/css/style.css`)
 
+## Hands-on materials
+
+`hands-on.html` links to the three notebooks on the hands-on repository's `main` branch.
+The QR code always points to this page; update notebook links here rather than changing
+the QR destination. PNG/SVG files live in `assets/qr/`, and the 16:9 projection PDF is
+`assets/slides/hands-on-qr.pdf`. Keep these assets on a white background in both themes.
+
 ## Pages
 
 | File                  | Purpose                                                              |
 | --------------------- | --------------------------------------------------------------------- |
 | `index.html`          | Home/About — abstract-level overview + links to every other page      |
 | `tutorial.html`       | Learning goals, audience, schedule table, BibTeX citation, all 7 presenters |
+| `hands-on.html`       | Three Colab notebooks, shared QR code, and a downloadable projection slide |
 | `papers.html`         | Intro to the reading list, with topic links into [awesome-semantic-id](https://github.com/semantic-id-tutorial/awesome-semantic-id) |
 | `presenters.html`     | Full bios for all 7 presenters, with photos                           |
 | `editions.html`       | Edition archive; not linked from the site while there is only one edition |
@@ -47,7 +55,7 @@ proposal). The CIKM '26 slide deck is available at
    add papers there, not here. `papers.html` only links to its sections; update the
    topic cards if the repo's section headings (and thus anchors) change.
 5. **Editions**: see the checklist below. The nav and footer are identical across all
-   five pages, so a change to either must be made in every file (a `sed` across
+   six pages, so a change to either must be made in every file (a `sed` across
    `*.html` works, since the markup is the same string on every page).
 6. **Slides**: replace `assets/slides/cikm26_tutorial_slides.pdf` to publish a new
    version of this edition's deck. For a new edition, use a separate filename and

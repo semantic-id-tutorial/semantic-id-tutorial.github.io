@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-theme-setting="system">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Hands-on — IDs That Mean Something</title>
+  <meta name="description" content="Open the semantic ID tokenizer, TIGER vs SASRec, and cross-domain transfer notebooks in Google Colab.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css?v=4effbb91">
+  <script>
+    (function () {
+      var saved = localStorage.getItem("theme-setting") || "system";
+      document.documentElement.setAttribute("data-theme-setting", saved);
+      if (saved !== "system") document.documentElement.setAttribute("data-theme", saved);
+    })();
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-brand" href="index.html">SemID4Rec</a>
+      <button class="navbar-toggle" onclick="toggleNav()" aria-label="Toggle navigation">☰</button>
+      <div class="navbar-links" id="navbar-links">
+        <a href="index.html">About</a>
+        <a href="tutorial.html">Tutorial</a>
+        <a href="hands-on.html" class="active">Hands-on</a>
+        <a href="papers.html">Reading List</a>
+        <a href="presenters.html">Presenters</a>
+        <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Switch theme">☀</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page-main">
+    <div class="container">
+      <h1 class="page-title">Hands-on</h1>
+      <p class="lede">Open the notebooks below in Google Colab. You will need a Google account to run them.</p>
+      <p>Follow the setup and runtime instructions in each notebook.</p>
+      <div class="btn-row">
+        <a class="btn" href="https://github.com/saghiles/semantic-id-tutorial" target="_blank" rel="noopener">GitHub repository</a>
+      </div>
+
+      <section class="hands-on-share" aria-labelledby="scan-title">
+        <a class="hands-on-qr" href="https://semantic-id-tutorial.github.io/hands-on.html" aria-label="Open the hands-on page">
+          <img src="assets/qr/hands-on-qr.svg" width="240" height="240" alt="QR code linking to this hands-on page">
+        </a>
+        <div>
+          <h2 id="scan-title">Scan to open the notebooks</h2>
+          <p>Share this page with the room, or open it on another device.</p>
+          <a class="hands-on-url" href="https://semantic-id-tutorial.github.io/hands-on.html">https://semantic-id-tutorial.github.io/hands-on.html</a>
+          <div class="btn-row">
+            <a class="btn" href="assets/qr/hands-on-qr.png" download>QR code (PNG)</a>
+            <a class="btn" href="assets/qr/hands-on-qr.svg" download>QR code (SVG)</a>
+            <a class="btn" href="assets/slides/hands-on-qr.pdf" target="_blank" rel="noopener">QR slide (PDF)</a>
+          </div>
+        </div>
+      </section>
+
+      <h2 id="session-1">Session 1: Building and using semantic IDs</h2>
+      <article class="card notebook-card">
+        <h3>Part 1: Semantic ID tokenizer</h3>
+        <p>Build a tokenizer that encodes items as semantic IDs.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://colab.research.google.com/github/saghiles/semantic-id-tutorial/blob/main/session1_part1_semantic_id_tokenizer.ipynb" target="_blank" rel="noopener">Open in Colab</a>
+          <a class="btn" href="https://github.com/saghiles/semantic-id-tutorial/blob/main/session1_part1_semantic_id_tokenizer.ipynb" target="_blank" rel="noopener">View notebook</a>
+        </div>
+      </article>
+      <article class="card notebook-card">
+        <h3>Part 2: TIGER vs SASRec</h3>
+        <p>Compare generative recommendation with TIGER against SASRec.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://colab.research.google.com/github/saghiles/semantic-id-tutorial/blob/main/session1_part2_tiger_vs_sasrec.ipynb" target="_blank" rel="noopener">Open in Colab</a>
+          <a class="btn" href="https://github.com/saghiles/semantic-id-tutorial/blob/main/session1_part2_tiger_vs_sasrec.ipynb" target="_blank" rel="noopener">View notebook</a>
+        </div>
+      </article>
+
+      <h2 id="session-2">Session 2: Cross-domain transfer</h2>
+      <article class="card notebook-card">
+        <h3>Cross-domain transfer</h3>
+        <p>Use semantic IDs for recommendation across domains.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://colab.research.google.com/github/saghiles/semantic-id-tutorial/blob/main/session2_cross_domain_transfer.ipynb" target="_blank" rel="noopener">Open in Colab</a>
+          <a class="btn" href="https://github.com/saghiles/semantic-id-tutorial/blob/main/session2_cross_domain_transfer.ipynb" target="_blank" rel="noopener">View notebook</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      IDs That Mean Something · A hands-on tutorial on semantic IDs for recommender systems · <a href="https://github.com/saghiles/semantic-id-tutorial" target="_blank" rel="noopener">Code &amp; notebooks</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=516834d5"></script>
+  <script>initTheme();</script>
+</body>
+</html>

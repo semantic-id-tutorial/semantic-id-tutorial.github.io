@@ -836,3 +836,27 @@ html[data-theme="dark"] .venue-map .leaflet-tile-pane {
   border-color: var(--divider-color);
   color: var(--text-color-light);
 }
+
+/* Hands-on notebooks and reusable QR code. */
+.hands-on-share {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border: 1px solid var(--divider-color);
+  border-radius: 12px;
+  background: var(--code-bg-color);
+}
+.hands-on-qr { display: block; width: 240px; max-width: 100%; background: #fff; border-radius: 8px; overflow: hidden; line-height: 0; }
+.hands-on-qr img { display: block; width: 100%; height: auto; }
+.hands-on-share h2 { margin-top: 0; }
+.hands-on-url { overflow-wrap: anywhere; }
+.notebook-card { margin: 1rem 0; }
+.notebook-card h3 { margin-top: 0; }
+.notebook-card .btn-row { margin-bottom: 0; }
+@media (max-width: 640px) {
+  .hands-on-share { grid-template-columns: minmax(0, 1fr); gap: 1rem; padding: 1.25rem; }
+  .hands-on-qr { margin: 0 auto; }
+}
