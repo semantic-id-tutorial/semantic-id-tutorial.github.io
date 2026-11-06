@@ -26,11 +26,8 @@ top of the file — edit `--theme-color` etc. to re-theme) and `assets/js/site.j
 (light/dark theme toggle that defaults to the system setting + mobile nav).
 
 Content is transcribed from `IDs_That_Mean_Something__...pdf` (the CIKM '26 tutorial
-proposal). Still outstanding, marked with `<span class="tbd">TBD</span>` or noted below:
-
-- **Slides link** — the "Slides (TBD)" button under the title of `tutorial.html` is
-  disabled until the deck is uploaded; replace the `<span class="btn is-disabled">` with
-  an `<a class="btn" href="...">Slides</a>` link
+proposal). The CIKM '26 slide deck is available at
+`assets/slides/cikm26_tutorial_slides.pdf`, linked from the tutorial page.
 
 ## Customize
 
@@ -52,8 +49,9 @@ proposal). Still outstanding, marked with `<span class="tbd">TBD</span>` or note
 5. **Editions**: see the checklist below. The nav and footer are identical across all
    five pages, so a change to either must be made in every file (a `sed` across
    `*.html` works, since the markup is the same string on every page).
-6. Remove the `.tbd` markers (`<span class="tbd">TBD</span>`) as you fill in the
-   remaining real info (presenters, slides link).
+6. **Slides**: replace `assets/slides/cikm26_tutorial_slides.pdf` to publish a new
+   version of this edition's deck. For a new edition, use a separate filename and
+   update the Slides button in `tutorial.html`.
 7. **Favicon**: swap `assets/img/favicon.svg` for your own icon if you want something
    other than the generic red "T" mark.
 
