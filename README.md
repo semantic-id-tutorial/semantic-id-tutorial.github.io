@@ -58,7 +58,9 @@ proposal). The CIKM '26 slide deck is available at
    six pages, so a change to either must be made in every file (a `sed` across
    `*.html` works, since the markup is the same string on every page).
 6. **Slides**: replace `assets/slides/cikm26_tutorial_slides.pdf` to publish a new
-   version of this edition's deck. For a new edition, use a separate filename and
+   version of this edition's deck. Update the `?v=` value on the Slides button in
+   `tutorial.html` to the first 8 characters of the PDF's SHA-256 so visitors load
+   the new PDF instead of a cached copy. For a new edition, use a separate filename and
    update the Slides button in `tutorial.html`.
 7. **Favicon**: swap `assets/img/favicon.svg` for your own icon if you want something
    other than the generic red "T" mark.
